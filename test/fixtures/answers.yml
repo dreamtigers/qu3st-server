@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: one
+  question: one
+  complete: false
+
+two:
+  team: two
+  question: two
+  complete: false
