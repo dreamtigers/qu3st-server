@@ -42,6 +42,9 @@ gem "devise", "~> 4.5"
 # Add hamlit for easier templating
 gem "hamlit", "~> 2.9"
 
+# Fancy and lightweight css
+gem "bulma-rails", "~> 0.7.2"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
