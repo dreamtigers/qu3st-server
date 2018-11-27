@@ -1,0 +1,25 @@
+.hero
+  .hero-body
+    .container
+      %h1.title Positions table
+      %table.table.is-hoverable
+        %thead
+          %tr
+            %th Team
+            - (1..23).each do |number|
+              %th{id: number}= number
+            %th Score
+        %tbody.has-text-centered
+          - @teams.each do |team|
+            %tr
+              %td= team.username
+              - (1..23).each do |number|
+                - if Answer.find_by(team_id: team.id, question_id: number)
+                  %td 1
+                - else
+                  %td 0
+              -# Ternary operator, if answers exists, print the number of answers, else 0
+              %td= Answer.where(team_id: team.id) ? Answer.where(team_id: team.id).count : 0
+              /%td= link_to 'Show', question
+              /%td= link_to 'Edit', edit_question_path(question)
+              /%td= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }

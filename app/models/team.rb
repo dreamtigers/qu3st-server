@@ -4,6 +4,8 @@ class Team < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :answers
+
   def email_required?
     false
   end
@@ -12,6 +14,7 @@ class Team < ApplicationRecord
     false
   end
 
+  # use this instead of email_changed? for rails >= 5.1
   def will_save_change_to_email?
     false
   end
