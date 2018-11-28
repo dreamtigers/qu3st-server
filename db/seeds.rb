@@ -1,6 +1,8 @@
 puts '-- seed table "teams" with MAC'
 Team.create({username: 'MAC', password: '123123',
 	    password_confirmation: '123123'})
+Team.create({username: 'POL', password: '123123',
+	    password_confirmation: '123123'})
 
 questions = [
   # question 01
@@ -82,4 +84,27 @@ questions.each_with_index do |question, index|
   # Arrays start at 0, db starts with 1, etc etc
   puts '-- seed table "questions" with question %02d' % (index + 1)
   Question.create(question)
+end
+
+answers = [
+  {team_id: 1, question_id: 1, complete: true},
+  {team_id: 1, question_id: 2, complete: false},
+  {team_id: 1, question_id: 3, complete: true},
+  {team_id: 1, question_id: 4, complete: false},
+  {team_id: 1, question_id: 10, complete: true},
+  {team_id: 1, question_id: 15, complete: true},
+  {team_id: 1, question_id: 17, complete: true},
+
+  {team_id: 2, question_id: 3, complete: true},
+  {team_id: 2, question_id: 5, complete: false},
+  {team_id: 2, question_id: 6, complete: true},
+  {team_id: 2, question_id: 7, complete: false},
+  {team_id: 2, question_id: 20, complete: true},
+  {team_id: 2, question_id: 23, complete: false},
+]
+
+answers.each_with_index do |answer, index|
+  # Arrays start at 0, db starts with 1, etc etc
+  # puts '-- seed table "answer" with answer %02d for team %02d' % (answer.id, team.id)
+  Answer.create(answer)
 end
