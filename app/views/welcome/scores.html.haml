@@ -14,12 +14,14 @@
             %tr
               %td= team.username
               - (1..23).each do |number|
-                - if Answer.find_by(team_id: team.id, question_id: number)
-                  %td 1
-                - else
-                  %td 0
+                %td
+                  - if answer = Answer.find_by(team: team.id, question: number)
+                    - if answer.complete
+                      = fa_icon "check", class: "has-text-success"
+                    - else
+                      = fa_icon "times", class: "has-text-danger"
               -# Ternary operator, if answers exists, print the number of answers, else 0
-              %td= Answer.where(team_id: team.id) ? Answer.where(team_id: team.id).count : 0
+              %td= Answer.where(team: team.id) ? Answer.where(team: team.id, complete: true).count : 0
               /%td= link_to 'Show', question
               /%td= link_to 'Edit', edit_question_path(question)
               /%td= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }

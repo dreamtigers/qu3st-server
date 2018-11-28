@@ -45,6 +45,9 @@ gem "hamlit", "~> 2.9"
 # Fancy and lightweight css
 gem "bulma-rails", "~> 0.7.2"
 
+# Pretty icons
+gem "font-awesome-rails", "~> 4.7"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
