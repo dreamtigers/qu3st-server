@@ -4,6 +4,8 @@ class Team < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates_uniqueness_of :username
+
   has_many :answers
 
   def email_required?
