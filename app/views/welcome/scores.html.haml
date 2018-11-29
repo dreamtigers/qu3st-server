@@ -9,7 +9,8 @@
             - (1..23).each do |number|
               %th{id: number}= number
             %th Score
-        %tbody.has-text-centered
+        %tbody
+          -# Here's the team model recieved from the controller
           - @teams.each do |team|
             %tr
               %td= team.username
@@ -20,5 +21,5 @@
                       = fa_icon "check", class: "has-text-success"
                     - else
                       = fa_icon "times", class: "has-text-danger"
-              -# Ternary operator, if answers exists, print the number of answers, else 0
+              -# Ternary op: if answers exists, print number of answers, else 0
               %td= team.answers ? team.answers.where(complete: true).count : 0
