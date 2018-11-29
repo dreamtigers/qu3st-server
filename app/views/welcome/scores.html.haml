@@ -2,24 +2,24 @@
   .hero-body
     .container
       %h1.title Positions table
-      %table.table.is-hoverable
+      %table.table.is-hoverable.is-striped.is-fullwidth
         %thead
           %tr
             %th Team
-            - (1..23).each do |number|
+            - @questions_ids.each do |number|
               %th{id: number}= number
             %th Score
         %tbody
-          -# Here's the team model recieved from the controller
+          -# Here's the team model received from the controller
           - @teams.each do |team|
             %tr
               %td= team.username
-              - (1..23).each do |number|
+              - @questions_ids.each do |number|
                 %td
-                  - if answer = team.answers.find_by(question: number)
+                  - if answer = team.answers.detect {|a| a[:question_id] == number}
                     - if answer.complete
-                      = fa_icon "check", class: "has-text-success"
+                      %span.icon.is-small.has-text-success= fa_icon "check"
                     - else
-                      = fa_icon "times", class: "has-text-danger"
+                      %span.icon.is-small.has-text-danger= fa_icon "times"
               -# Ternary op: if answers exists, print number of answers, else 0
-              %td= team.answers ? team.answers.where(complete: true).count : 0
+              %td= team.answers ? team.answers.count {|a| a[:complete] == true} : 0

@@ -15,3 +15,7 @@
  */
 @import "bulma";
 @import "font-awesome";
+
+.table th {
+  text-align: center;
+}
