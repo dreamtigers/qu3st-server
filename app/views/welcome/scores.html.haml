@@ -15,10 +15,10 @@
               %td= team.username
               - (1..23).each do |number|
                 %td
-                  - if answer = Answer.find_by(team: team.id, question: number)
+                  - if answer = team.answers.find_by(question: number)
                     - if answer.complete
                       = fa_icon "check", class: "has-text-success"
                     - else
                       = fa_icon "times", class: "has-text-danger"
               -# Ternary operator, if answers exists, print the number of answers, else 0
-              %td= Answer.where(team: team.id) ? Answer.where(team: team.id, complete: true).count : 0
+              %td= team.answers ? team.answers.where(complete: true).count : 0
