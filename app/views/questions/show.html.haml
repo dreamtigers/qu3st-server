@@ -1,11 +1,41 @@
-%p#notice= notice
+.hero.is-fullheight
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-one-fifth
+          - if @question.id > @questions.first.id
+            .level
+              %a.button.is-large.level-item{href: question_path(@question.id-1)}
+                %span.icon.is-small= fa_icon "caret-left"
+        .column.is-two-fifths
+          .card
+            .card-header
+              %p.card-header-title= "Question %02d" % @question.id
+            .card-content
+              .subtitle= @question.description
+            = form_with(model: @question, local: true) do |form|
+              - if @question.errors.any?
+                #error_explanation
+                  %h2= "#{pluralize(question.errors.count, 'error')} prohibited this question from being saved:"
 
-%p
-  %strong Description:
-  = @question.description
-
-%p>
-  %strong Key:
-  = @question.key
-
-= link_to 'Back', questions_path
+                  %ul
+                  - @question.errors.full_messages.each do |message|
+                    %li= message
+              .card-footer
+                .card-footer-item
+                  = render partial: "shared/icon", locals: {team: @team, question_id: @question.id}
+                .card-footer-item
+                  .field
+                    = form.text_field :key, class: "input", value: nil
+                .card-footer-item
+                  .actions
+                    = form.submit "Submit key", class: "button is-link"
+          -# = link_to 'Back', questions_path
+          %br
+          %a.button.is-large.is-fullwidth{href: questions_path}
+            %span.icon.is-small= fa_icon "caret-up"
+        .column.is-one-fifth
+          - if @question.id < @questions.last.id
+            .level
+              %a.button.is-large.level-item.is-fullheight{href: question_path(@question.id+1)}
+                %span.icon.is-small= fa_icon "caret-right"

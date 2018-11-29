@@ -17,14 +17,7 @@
               -# For every question id...
               - @questions_ids.each do |number|
                 %td
-                  -# If an answer of the team contains the current question id
-                  -# Use block/lambda to filter the array of hashes and
-                  -# Assign said answer to a var, and check if it's completed
-                  - if answer = team.answers.detect {|a| a[:question_id] == number}
-                    - if answer.complete
-                      %span.icon.is-small.has-text-success= fa_icon "check"
-                    - else
-                      %span.icon.is-small.has-text-danger= fa_icon "times"
+                  = render partial: "shared/icon", locals: {team: team, question_id: number}
               -# Ternary op: if answers exists, print number of answers, else 0
               -# Use block/lambda to count hashes where :complete == true
               %td= team.answers ? team.answers.count {|a| a[:complete] == true} : 0
