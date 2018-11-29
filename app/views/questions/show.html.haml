@@ -1,0 +1,11 @@
+%p#notice= notice
+
+%p
+  %strong Description:
+  = @question.description
+
+%p>
+  %strong Key:
+  = @question.key
+
+= link_to 'Back', questions_path
