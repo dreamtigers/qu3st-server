@@ -1,6 +1,7 @@
 puts '-- seed table "teams" with MAC'
 Team.create({username: 'MAC', password: '123123',
 	    password_confirmation: '123123'})
+puts '-- seed table "teams" with POL'
 Team.create({username: 'POL', password: '123123',
 	    password_confirmation: '123123'})
 
