@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_001130) do
+ActiveRecord::Schema.define(version: 2018_11_29_045222) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "team_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_001130) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["team_id", "question_id"], name: "index_answers_on_team_id_and_question_id", unique: true
     t.index ["team_id"], name: "index_answers_on_team_id"
   end
 
