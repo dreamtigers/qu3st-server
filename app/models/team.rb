@@ -7,6 +7,7 @@ class Team < ApplicationRecord
   validates_uniqueness_of :username
 
   has_many :answers
+  has_many :questions, through: :answers
 
   def email_required?
     false
