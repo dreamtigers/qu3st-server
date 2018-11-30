@@ -15,5 +15,5 @@
                 %tr
                   %td= "Question %02d" % number
                   %td
-                    = render partial: "shared/icon", locals: {team: @team, question_id: number}
+                    = render partial: "shared/icon", locals: {team: current_user, question_id: number}
                   %td= link_to 'Show', question_path(number)

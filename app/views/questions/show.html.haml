@@ -3,7 +3,7 @@
     .container
       .columns.is-centered
         .column.is-one-fifth
-          - if @question.id > @questions.first.id
+          - if @question.id > 1
             .level
               %a.button.is-large.level-item{href: question_path(@question.id-1)}
                 %span.icon.is-small= fa_icon "caret-left"
@@ -23,7 +23,7 @@
                     %li= message
               .card-footer
                 .card-footer-item
-                  = render partial: "shared/icon", locals: {team: @team, question_id: @question.id}
+                  = render partial: "shared/icon", locals: {team: current_team, question_id: @question.id}
                 .card-footer-item
                   .field
                     = form.text_field :key, class: "input", value: nil
@@ -35,7 +35,7 @@
           %a.button.is-large.is-fullwidth{href: questions_path}
             %span.icon.is-small= fa_icon "caret-up"
         .column.is-one-fifth
-          - if @question.id < @questions.last.id
+          - if @question.id < Question.last.id
             .level
               %a.button.is-large.level-item.is-fullheight{href: question_path(@question.id+1)}
                 %span.icon.is-small= fa_icon "caret-right"
