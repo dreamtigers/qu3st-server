@@ -1,0 +1,9 @@
+.navbar
+  .container
+    .navbar-end
+      .navbar-item= link_to "Scores", scores_path
+      - if team_signed_in?
+        .navbar-item= link_to "Questions", questions_path
+        .navbar-item= link_to "Sign Out", destroy_team_session_path, method: :delete
+      - else
+        .navbar-item= link_to "Sign In", new_team_session_path

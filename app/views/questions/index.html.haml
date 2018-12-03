@@ -1,4 +1,6 @@
 .hero
+  .hero-head
+    = render partial: "shared/navbar"
   .hero-body
     .container
       .columns.is-centered
@@ -15,5 +17,5 @@
                 %tr
                   %td= "Question %02d" % number
                   %td
-                    = render partial: "shared/icon", locals: {team: current_user, question_id: number}
+                    = render partial: "shared/icon", locals: {team: current_team, question_id: number}
                   %td= link_to 'Show', question_path(number)
