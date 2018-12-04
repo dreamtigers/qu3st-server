@@ -1,0 +1,14 @@
+first:
+  team_id: 1
+  question_id: 1
+  complete: true
+
+second:
+  team_id: 1
+  question_id: 2
+  complete: false
+
+third:
+  team_id: 1
+  question_id: 3
+  complete:
