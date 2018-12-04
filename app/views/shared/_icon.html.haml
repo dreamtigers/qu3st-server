@@ -1,7 +1,7 @@
 -# If an answer of the team contains the current question id
 -# Use block/lambda to filter the array of hashes and
 -# Assign said answer to a var, and check if it's completed
-- if answer = team.answers.detect {|a| (a[:question_id] == question_id) and (a[:complete] != nil)}
+- if answer = team.answers.detect {|a| a[:question_id] == question_id and a[:complete] != nil}
   - if answer.complete
     %span.icon.is-small.has-text-success= fa_icon "check"
   - else
