@@ -13,9 +13,9 @@
                 %th Completed
                 %th Show
             %tbody
-              - @questions_ids.each do |number|
+              - current_team.questions.each do |question|
                 %tr
-                  %td= "Question %02d" % number
+                  %td= "Question %02d" % question.id
                   %td
-                    = render partial: "shared/icon", locals: {team: current_team, question_id: number}
-                  %td= link_to 'Show', question_path(number)
+                    = render partial: "shared/icon", locals: {team: current_team, question_id: question.id}
+                  %td= link_to 'Show', question_path(question.id)

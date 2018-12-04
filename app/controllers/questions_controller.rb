@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions_ids = Question.ids
   end
 
   # GET /questions/1
