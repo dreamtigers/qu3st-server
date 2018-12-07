@@ -8,8 +8,8 @@
         %thead
           %tr
             %th Team
-            - @questions_ids.each do |number|
-              %th= number
+            - @questions_ids.each do |id|
+              %th= id
             %th Score
         %tbody
           -# For every team in the teams...
@@ -17,9 +17,9 @@
             %tr
               %td= team.username
               -# For every question id...
-              - @questions_ids.each do |number|
+              - @questions_ids.each do |id|
                 %td
-                  = render partial: "shared/icon", locals: {team: team, question_id: number}
+                  = render partial: "shared/icon", locals: {team: team, question_id: id}
               -# Ternary op: if answers exists, print number of answers, else 0
               -# Use block/lambda to count hashes where :complete == true
               %td= team.answers ? team.answers.count {|a| a[:complete] == true} : 0

@@ -4,11 +4,6 @@
   .hero-body
     .container
       .columns.is-centered
-        .column.is-one-fifth
-          - if @question.id > 1
-            .level
-              %a.button.is-large.level-item{href: question_path(@question.id-1)}
-                %span.icon.is-small= fa_icon "caret-left"
         .column.is-two-fifths
           .card
             .card-header
@@ -31,12 +26,18 @@
                 .card-footer-item
                   .actions
                     = form.submit "Submit key", class: "button is-link"
-          -# = link_to 'Back', questions_path
           %br
-          %a.button.is-large.is-fullwidth{href: questions_path}
-            %span.icon.is-small= fa_icon "caret-up"
-        .column.is-one-fifth
-          - if @question.id < Question.last.id
-            .level
-              %a.button.is-large.level-item.is-fullheight{href: question_path(@question.id+1)}
-                %span.icon.is-small= fa_icon "caret-right"
+          .columns
+            .column.is-one-third
+              - if @question.id > 1
+                .level
+                  %a.button.is-large.level-item{href: question_path(@question.id-1)}
+                    %span.icon.is-small= fa_icon "caret-left"
+            .column.is-one-third
+              %a.button.is-large.is-fullwidth{href: questions_path}
+                %span.icon.is-small= fa_icon "caret-up"
+            .column.is-one-third
+              - if @question.id < Question.last.id
+                .level
+                  %a.button.is-large.level-item.is-fullheight{href: question_path(@question.id+1)}
+                    %span.icon.is-small= fa_icon "caret-right"
