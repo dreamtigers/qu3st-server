@@ -2,10 +2,10 @@ class Question < ApplicationRecord
   has_many :answers
   has_many :teams, through: :answers
 
-  def check_key params, team
-    if params[:key] == self.key
+  def check_key key, team
+    if key == self.key
       complete = true
-    elsif params[:key] == 'run'
+    elsif key == 'run'
       complete = false
     else
       return false
@@ -14,4 +14,5 @@ class Question < ApplicationRecord
     # answer.update(complete: complete)
     team.answers.find_or_create_by(question_id: self.id).update(complete: complete)
   end
+
 end

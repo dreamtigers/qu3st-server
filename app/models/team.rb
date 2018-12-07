@@ -23,6 +23,14 @@ class Team < ApplicationRecord
     false
   end
 
+  def next_question
+    question = self.questions.where(answers: {complete: nil}).first
+    if question == nil
+      question = self.questions.where.not(answers: {complete: nil}).last
+    end
+    return question
+  end
+
   private
     def create_empty_answers
       Question.ids.each do |id|
