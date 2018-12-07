@@ -9,7 +9,7 @@ class Team < ApplicationRecord
   has_many :questions, through: :answers
 
   # Hooks
-  after_create :create_first_empty_answer
+  after_create :create_empty_answers
 
   # These are necessary so Devise uses usernames without worrying about emails
   def email_required?
@@ -24,7 +24,9 @@ class Team < ApplicationRecord
   end
 
   private
-    def create_first_empty_answer
-      self.answers.create(question_id: 1)
+    def create_empty_answers
+      Question.ids.each do |id|
+	self.answers.create(question_id: id)
+      end
     end
 end
