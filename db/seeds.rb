@@ -91,12 +91,10 @@ answers = [
   {team_id: 1, question_id: 1, complete: true},
   {team_id: 1, question_id: 2, complete: false},
   {team_id: 1, question_id: 3, complete: true},
-  {team_id: 1, question_id: 4, complete: false},
-  {team_id: 1, question_id: 5}
+  {team_id: 1, question_id: 4, complete: false}
 ]
 
 answers.each_with_index do |answer, index|
-  # Arrays start at 0, db starts with 1, etc etc
   # puts '-- seed table "answer" with answer %02d for team %02d' % (answer.id, team.id)
   Answer.update(answer)
 end

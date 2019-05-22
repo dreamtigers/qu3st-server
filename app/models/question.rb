@@ -10,9 +10,7 @@ class Question < ApplicationRecord
     else
       return false
     end
-    # answer = Answer.find_or_initialize_by(team_id: team_id, question_id: self.id)
-    # answer.update(complete: complete)
-    team.answers.find_or_create_by(question_id: self.id).update(complete: complete)
+    team.answers.find_by(question_id: self.id).update(complete: complete)
   end
 
 end
