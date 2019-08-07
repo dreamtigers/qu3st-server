@@ -76,11 +76,11 @@ I'm not sure how to deploy this project. TODO.
 ## Pictures
 Cover | Positions Table | Individual Question
 ----- | --------------- | -------------------
-[](screenshots/cover.png) | [](screenshots/positions.png) | [](screenshots/question.png)
+![](screenshots/cover.png) | ![](screenshots/positions.png) | ![](screenshots/question.png)
 
 Sign Up | Log In | List of Questions
 ------- | ------ | -----------------
-[](screenshots/signup.png) | [](screenshots/login.png) | [](screenshots/questions.png)
+![](screenshots/signup.png) | ![](screenshots/login.png) | ![](screenshots/questions.png)
 
 ## Running the tests
 
