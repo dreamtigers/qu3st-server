@@ -74,17 +74,13 @@ bundle install
 I'm not sure how to deploy this project. TODO.
 
 ## Pictures
-| Cover                         | Positions Table               |
-| ----------------------------- | ----------------------------- |
-| [](screenshots/cover.png)     | [](screenshots/positions.png) |
-| ----------------------------- | ----------------------------- |
-| Sign Up                       | Log in                        |
-| ----------------------------- | ----------------------------- |
-| [](screenshots/signup.png)    | [](screenshots/login.png)     |
-| ----------------------------- | ----------------------------- |
-| List of Questions             | Individual Question           |
-| ----------------------------- | ----------------------------- |
-| [](screenshots/questions.png) | [](screenshots/question.png)  |
+Cover | Positions Table | Individual Question
+----- | --------------- | -------------------
+[](/screenshots/cover.png) | [](/screenshots/positions.png) | [](/screenshots/question.png)
+
+Sign Up | Log In | List of Questions
+------- | ------ | -----------------
+[](/screenshots/signup.png) | [](/screenshots/login.png) | [](/screenshots/questions.png)
 
 ## Running the tests
 
