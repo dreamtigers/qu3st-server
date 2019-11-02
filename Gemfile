@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # User authentication
-gem "devise", "~> 4.5"
+gem "devise", "~> 4.7"
 
 # Add hamlit for easier templating
 gem "hamlit", "~> 2.9"
