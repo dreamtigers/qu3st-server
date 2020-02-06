@@ -9,7 +9,9 @@
             .card-header
               %p.card-header-title= "Question %02d" % @question.id
             .card-content
-              .subtitle= @question.description
+              .subtitle
+                :markdown
+                  #{@question.description}
             = form_with(model: @question, local: true) do |form|
               - if @question.errors.any?
                 #error_explanation

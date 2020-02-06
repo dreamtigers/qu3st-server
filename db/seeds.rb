@@ -7,16 +7,17 @@ questions = [
   {description: 'List hidden files, subdirectories and permissions of
    directories _ATK and _DEF', key: 'ala'},
   # question 04
-  {description: 'Where is the ifconfig command', key: 'exp'},
+  {description: 'Where is the `ifconfig` command', key: 'exp'},
   # question 05
   {description: 'Change pwd to _ATK, then change to _LVL, and return to
    _ATK **without using the explicit path**', key: 'nido'},
   # question 06
   {description: 'Show all the lines in the POKE file that match with a
    word that contains:
-   * two dots
-   * the next 4 characters are betwen 1 and 5
-   * the next 3 to 6 characters contain the letters a and e', key: 'nxt'},
+
+   - a colon (:)
+   - the next 4 characters are betwen 1 and 5 (p.e. 1235)
+   - the next 3 to 6 characters contain the letters a and e', key: 'nxt'},
   # question 07
   {description: 'List all the files of bosque_verde whose name do not
   contain 4 characters', key: 'trueno'},

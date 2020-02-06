@@ -51,6 +51,9 @@ gem "font-awesome-rails", "~> 4.7"
 # Better json builder
 gem "jb", "~> 0.5.0"
 
+# Transform markdown to html
+gem "kramdown", "~> 2.1"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
